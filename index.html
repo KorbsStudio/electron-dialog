@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>Electron Dialog</title>
+    <script src="https://kit.fontawesome.com/db4a23598f.js"></script> <!-- Not Required -->
+  </head>
+  <body>
+    <div class="container">
+      <button id="show"><i class="fas fa-info"></i> Show Custom Message Box</button> <!-- Message dialog -->
+      <button id="error"><i class="fas fa-exclamation-triangle"></i> Show Error Message Box</button> <!-- Error dialog -->
+    </div>
+    <script src="./dialog.js"></script>
+  </body>
+</html>
+<!-- Everything below can be removed -->
+<style>
+body {
+  background: #7072bb;
+}
+button#show {
+  background: #544fff;
+}
+button#error {
+  background: #ff4f4f;
+}
+
+.container {
+  position: fixed;
+  top: 50%;
+  left: 0px;
+  transform: translate(0px, -50%);
+}
+.container button {
+  display: block;
+  margin: 10px 20px 10px 50px;
+  border: none;
+  padding: 10px 20px 10px 50px;
+  border-radius: 7px;
+  color: white;
+  border: 2px transparent solid;
+  transition: 0.3s border ease-in-out;
+}
+.container button:hover {
+  cursor: pointer;
+  border: 2px white solid;
+  transition: 0.3s border ease-in-out;
+}
+.container button i {
+  background: rgb(0 0 0 / 25%);
+  position: absolute;
+  padding: 13px;
+  margin: -12px 0px 0px -53px;
+  width: 13px;
+  border-radius: 7px 0px 0px 7px;
+}
+</style>

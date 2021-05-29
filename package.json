@@ -1,0 +1,13 @@
+{
+  "name": "electron-dialog",
+  "version": "1.0.0",
+  "description": "Show system dialogs",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "KorbsStudio",
+  "devDependencies": {
+    "electron": "^13.0.1"
+  }
+}
