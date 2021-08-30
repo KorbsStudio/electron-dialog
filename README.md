@@ -1,37 +1,85 @@
 # Electron Dialog
-Preview shown on [GNOME 40](https://forty.gnome.org/) desktop using [Fedora 34](https://getfedora.org/):
+Electron Documention: https://www.electronjs.org/docs/api/dialog
 
-https://user-images.githubusercontent.com/51213244/120060559-73dbb180-c026-11eb-9523-366d77a9bf00.mp4
+## Preview
+### Windows
+Message Dialog:
 
-Electron Documention: https://www.electronjs.org/docs/api/dialogw
+![Message](https://i.imgur.com/34eu9ue.png)
 
-## Example Shown in Video Preview
+Question Dialog:
+
+![Question](https://i.imgur.com/yxR626R.png)
+
+Error Dialog:
+
+![Error](https://i.imgur.com/MEO9exs.png)
+
+### macOS
+No preview available, I don't own a mac :)
+
+<!-- Message Dialog:
+
+![Message]()
+
+Question Dialog:
+
+![Question]()
+
+Error Dialog:
+
+![Error]() -->
+
+### Linux
+Message Dialog:
+
+![Message](https://i.imgur.com/sr3WE4O.png)
+
+Question Dialog:
+
+![Question](https://i.imgur.com/6wDsWAV.png)
+
+Error Dialog:
+
+![Error](https://i.imgur.com/Uc1gH4H.png)
+
+## Dialogs
 ### Message
 ```
-showBox.addEventListener('click', (event) => {
-    dialog.showMessageBox({
-        buttons: ['Canel', 'Okay'],
-        icon: path.join(__dirname, './src/image.png'), // This demo doesn't include an image, but path is there as an example
-        title: 'Message',
-        message: 'Hey there! This is a message.',
-        detail: 'More details about the message that has appeared on your screen.',
-    }).then(box => {
-        console.log('Button Clicked Index - ', box.response);
-      
-        if (box.response === 0) {
-            console.log('User triggered "Cancel" button in dialog.')
-        } else if (box.response === 1) {
-            console.log('User triggered "Okay" button in dialog.')
-        }
-    }).catch(err => {
-        console.log(err)
-    })
-});
+const options = {
+    type: 'info',
+    title: 'Dialog',
+    message: 'Title of dialog.',
+    detail: 'Details for the message dialog.',
+};
+
+dialog.showMessageBox(null, options, (response, checkboxChecked) => {});
+```
+
+### Question
+```
+const options = {
+    type: 'question',
+    buttons: ['Cancel', 'Option One', 'Option Two', 'Option Three'],
+    defaultId: 2,
+    title: 'Dialog',
+    message: 'Do you want to continue?',
+    detail: 'Choose any of the options below or cancel.',
+    checkboxLabel: 'This is a checkbox',
+    checkboxChecked: true,
+};
+
+dialog.showMessageBox(null, options, (response, checkboxChecked) => {});
 ```
 
 ### Error Message
 ```
-error.addEventListener('click', (event) => {
-    dialog.showErrorBox('Error Message', 'Explaination for error.');
-});
+const options = {
+    type: 'error',
+    title: 'Dialog',
+    message: 'Title of error.',
+    detail: 'Details for the error dialog.',
+};
+
+dialog.showMessageBox(null, options, (response, checkboxChecked) => {});
 ```
