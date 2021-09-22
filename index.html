@@ -5,11 +5,10 @@
   </head>
   <body>
     <div class="container">
-      <button onclick="ipcRenderer.send('dialogMessage')" id="show"><i class="fas fa-info"></i> Show Message Dialog</button> <!-- Message dialog -->
-      <button onclick="ipcRenderer.send('dialogQuestion')" id="show"><i class="fas fa-question"></i> Show Question Dialog</button> <!-- Message dialog -->
-      <button onclick="ipcRenderer.send('dialogError')" id="error"><i class="fas fa-exclamation-triangle"></i> Show Error Message Dialog</button> <!-- Error dialog -->
+      <button onclick="window.api.send('dialogMessage')" id="show"><i class="fas fa-info"></i> Show Message Dialog</button> <!-- Message dialog -->
+      <button onclick="window.api.send('dialogQuestion')" id="show"><i class="fas fa-question"></i> Show Question Dialog</button> <!-- Message dialog -->
+      <button onclick="window.api.send('dialogError')" id="error"><i class="fas fa-exclamation-triangle"></i> Show Error Message Dialog</button> <!-- Error dialog -->
     </div>
-    <script src="./renderer.js"></script>
   </body>
 </html>
 <!-- Everything below can be removed -->
