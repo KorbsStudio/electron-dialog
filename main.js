@@ -1,4 +1,5 @@
-const {app, dialog, BrowserWindow, ipcMain, ipcRenderer} = require('electron')
+const {app, dialog, contextBridge, BrowserWindow, ipcMain, ipcRenderer} = require('electron')
+const path = require('path');
 
 function createWindow () {
   const mainWindow = new BrowserWindow({
@@ -6,9 +7,7 @@ function createWindow () {
     height: 250,
     autoHideMenuBar: true,
     webPreferences: {
-      contextIsolation: false,
-      enableRemoteModule: true,
-      nodeIntegration: true
+      preload: path.join(__dirname, "./preload.js"),
     }
   })
   mainWindow.loadFile('index.html')
